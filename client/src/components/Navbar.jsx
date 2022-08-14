@@ -72,7 +72,9 @@ background-color: #999;
 `;
 
 const Navbar = () => {
-  const {currentUser} = useSelector(state=>state.user)
+
+  const {currentUser} = useSelector(state=>state.user);
+
   return (
     <Container>
       <Wrapper>
@@ -83,7 +85,7 @@ const Navbar = () => {
         {currentUser ? (
           <User>
             <VideoCallOutlinedIcon />
-            <Avatar />
+            <Avatar src={currentUser.img} />
             {currentUser.name}
           </User>
            ) : (<Link to="signin" style={{ textDecoration:"none" }}>
